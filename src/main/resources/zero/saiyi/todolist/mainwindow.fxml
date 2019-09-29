@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<BorderPane fx:id="mainWindow" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zero.saiyi.todolist.TodoController">
+	<!-- TODO Add Nodes -->
+	<top>
+		<MenuBar>
+			<Menu text="File">
+				<MenuItem text="New" onAction="#loadDialog"></MenuItem>
+				<MenuItem text="Exit"></MenuItem>
+			</Menu>
+		</MenuBar>
+	</top>
+	<left>
+		<ListView fx:id="todoListView"></ListView>
+	</left>
+	<center>
+	<VBox>
+	   <TextArea fx:id="descriptionArea" VBox.vgrow="ALWAYS" wrapText="true" editable="false"
+	   >
+	   <font>
+	   	<Font name="monospace italic" size="16"></Font>
+	   </font>
+	   </TextArea>	   
+	   <HBox>
+	   	<Label text="Due :: ">
+	   		<font>
+	   			<Font name="monospace bold" size="20" />
+	   		</font>
+	   	</Label>
+	   	<Label fx:id="labelDate">
+	   		<font>
+	   			<Font name="monospace bold" size="20" />
+	   		</font>
+	   	</Label>
+	   </HBox>
+	</VBox>
+		
+	</center>
+</BorderPane>
+

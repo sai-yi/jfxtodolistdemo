@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<DialogPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="zero.saiyi.todolist.DialogController">
+	<!-- TODO Add Nodes -->
+	<headerText>
+		This is Header text
+	</headerText>
+	<content>
+		<GridPane vgap="10" hgap="10">
+			<Label text="Short Description:: " GridPane.rowIndex="0" GridPane.columnIndex="0"></Label>
+			<TextField fx:id="shortDescription" GridPane.rowIndex="0" GridPane.columnIndex="1"></TextField>
+			
+			<Label text="Details: " GridPane.rowIndex="1" GridPane.columnIndex="0"></Label>
+			<TextArea fx:id="tododetails" GridPane.rowIndex="1" GridPane.columnIndex="1" wrapText="true"></TextArea>
+			
+			<Label text="DeadLine : " GridPane.rowIndex="2" GridPane.columnIndex="0"></Label>
+			<DatePicker fx:id="deadlineDate" GridPane.rowIndex="2" GridPane.columnIndex="1"></DatePicker>
+		</GridPane>
+	</content>
+</DialogPane>
+

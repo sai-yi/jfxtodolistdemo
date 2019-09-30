@@ -10,41 +10,65 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
-<BorderPane fx:id="mainWindow" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zero.saiyi.todolist.TodoController">
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Tooltip?>
+<BorderPane fx:id="mainWindow"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="zero.saiyi.todolist.TodoController">
 	<!-- TODO Add Nodes -->
 	<top>
-		<MenuBar>
-			<Menu text="File">
-				<MenuItem text="New" onAction="#loadDialog"></MenuItem>
-				<MenuItem text="Exit"></MenuItem>
-			</Menu>
-		</MenuBar>
+		<VBox>
+			<MenuBar>
+				<Menu text="File">
+					<MenuItem text="New" onAction="#newTodoItemDialog"></MenuItem>
+					<MenuItem text="Exit"></MenuItem>
+				</Menu>
+			</MenuBar>
+			<ToolBar>
+				<HBox>
+					<Button text="New.." onAction="#newTodoItemDialog">
+					<tooltip>
+						<Tooltip text="create new Todo Item"></Tooltip>
+					</tooltip>
+						<graphic>
+							<ImageView>
+								<Image url="@/toolbarButtonGraphics/general/New16.gif"></Image>
+							</ImageView>
+						</graphic>
+					</Button>
+				</HBox>
+			</ToolBar>
+		</VBox>
 	</top>
 	<left>
-		<ListView fx:id="todoListView"></ListView>
+		<ListView fx:id="todoListView"
+			onKeyPressed="#handleDeleteKey"></ListView>
 	</left>
 	<center>
-	<VBox>
-	   <TextArea fx:id="descriptionArea" VBox.vgrow="ALWAYS" wrapText="true" editable="false"
-	   >
-	   <font>
-	   	<Font name="monospace italic" size="16"></Font>
-	   </font>
-	   </TextArea>	   
-	   <HBox>
-	   	<Label text="Due :: ">
-	   		<font>
-	   			<Font name="monospace bold" size="20" />
-	   		</font>
-	   	</Label>
-	   	<Label fx:id="labelDate">
-	   		<font>
-	   			<Font name="monospace bold" size="20" />
-	   		</font>
-	   	</Label>
-	   </HBox>
-	</VBox>
-		
+		<VBox>
+			<TextArea fx:id="descriptionArea" VBox.vgrow="ALWAYS"
+				wrapText="true" editable="false">
+				<font>
+					<Font name="monospace italic" size="16"></Font>
+				</font>
+			</TextArea>
+			<HBox>
+				<Label text="Due :: ">
+					<font>
+						<Font name="monospace bold" size="20" />
+					</font>
+				</Label>
+				<Label fx:id="labelDate">
+					<font>
+						<Font name="monospace bold" size="20" />
+					</font>
+				</Label>
+			</HBox>
+		</VBox>
+
 	</center>
 </BorderPane>
 

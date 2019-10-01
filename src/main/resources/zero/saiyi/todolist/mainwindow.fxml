@@ -15,6 +15,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.ToggleButton?>
 <BorderPane fx:id="mainWindow"
 	xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="zero.saiyi.todolist.TodoController">
@@ -24,7 +25,7 @@
 			<MenuBar>
 				<Menu text="File">
 					<MenuItem text="New" onAction="#newTodoItemDialog"></MenuItem>
-					<MenuItem text="Exit"></MenuItem>
+					<MenuItem text="Exit" onAction="#exitProgram"></MenuItem>
 				</Menu>
 			</MenuBar>
 			<ToolBar>
@@ -39,6 +40,11 @@
 							</ImageView>
 						</graphic>
 					</Button>
+					<ToggleButton fx:id="todayToggleBtn" text="Today's items" onAction="#handleTodayFilter">
+						<tooltip>
+							<Tooltip text="On is only show today's items or Off show all items"></Tooltip>
+						</tooltip>
+					</ToggleButton>
 				</HBox>
 			</ToolBar>
 		</VBox>
